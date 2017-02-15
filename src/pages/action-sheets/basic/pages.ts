@@ -10,6 +10,7 @@ import { Transfer } from 'ionic-native';
 // import { FileUploadOptions } from 'ionic-native';
 
 import { ListPage } from '../../list/list';
+import { BackHomePage } from '../../back-home/back-home';
 
 
 @Component({
@@ -221,6 +222,14 @@ export class BasicPage {
     this.navCtrl.push(ListPage,{paramTest:'我是测试数据'});
   }
 
+
+  //测试页面跳转
+  jumpPage22(){
+    //this.nav.push(page)
+    //带参数跳转
+    //this.showToast('666666');
+    this.navCtrl.push(BackHomePage );
+  }
 
 
   test(){

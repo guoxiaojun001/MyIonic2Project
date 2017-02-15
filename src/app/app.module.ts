@@ -11,13 +11,26 @@ import { MovieDetailPage } from '../pages/movie-detail/movie-detail';
 import { BaiduMapPage } from '../pages/baidu-map/baidu-map';
 import { EchartsPage } from '../pages/echarts/echarts';
 
-import { Data } from '../providers/data';
 import { ImageLoader } from '../components/image-loader/image-loader';
 import { ElasticHeader } from '../components/elastic-header/elastic-header';
 
 import { BasicPage }from '../pages/action-sheets/basic/pages'
 import { ListPage }from '../pages/list/list'
 import { ItemDetailsPage }from '../pages/item-details/item-details'
+
+import { BackHomePage } from '../pages/back-home/back-home';
+
+import { MyinfoPage } from '../pages/myinfo/myinfo';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+//页面要加这里
+
+
+//服务要加这里
+import {HttpService} from "../providers/HttpService";
+import {StorageService} from "../providers/StorageService";
+import { Data } from '../providers/data';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +48,11 @@ import { ItemDetailsPage }from '../pages/item-details/item-details'
     ElasticHeader,
     BasicPage,
     ListPage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    LoginPage,
+    RegisterPage,
+    MyinfoPage,
+    BackHomePage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{
@@ -61,8 +78,13 @@ import { ItemDetailsPage }from '../pages/item-details/item-details'
     EchartsPage,
     BasicPage,
     ListPage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    LoginPage,
+    RegisterPage,
+    MyinfoPage,
+    BackHomePage
   ],
-  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },Data]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
+    Data,HttpService,StorageService]
 })
 export class AppModule { }

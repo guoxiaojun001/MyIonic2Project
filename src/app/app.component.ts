@@ -6,6 +6,8 @@ import { BaiduMapPage } from '../pages/baidu-map/baidu-map';
 import { EchartsPage } from '../pages/echarts/echarts';
 import { BasicPage }from '../pages/action-sheets/basic/pages'
 
+import { LoginPage }from '../pages/login/login'
+
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +28,9 @@ export class MyApp {
     this.pages = [
       { title: '百度地图', icon: 'md-map', component: BaiduMapPage },
       { title: '图表', icon: 'md-analytics', component: EchartsPage },
-      { title: '相机', icon: 'md-analytics', component: BasicPage }
+      { title: '相机', icon: 'md-analytics', component: BasicPage },
+
+      { title: '登录', icon: 'md-analytics', component: LoginPage }
     ];
 
   }
