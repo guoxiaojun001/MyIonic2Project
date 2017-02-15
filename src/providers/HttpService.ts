@@ -43,7 +43,9 @@ export class HttpService {
                 this.handleError(err);
             });
     }
-    public httpPostNoAuth2(url: string, body: any) {
+
+    //post 请求
+    public httpPostNoAuth(url: string, body: any) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         let options = new RequestOptions({ headers: headers });
@@ -56,14 +58,14 @@ export class HttpService {
 
 
   //put请求测试
-  public httpPostNoAuth(url: string, body: any) {
+  public httpPutNoAuth(url: string, body: any) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     let options = new RequestOptions({ headers: headers });
     return this.http.put(url, body, options).toPromise()
       .then(res => res.json())
       .catch(err => {
-        
+
         this.handleError(err);
       });
   }

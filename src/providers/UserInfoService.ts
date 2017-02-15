@@ -18,7 +18,7 @@ export class UserInfoService {
   //登录
   login(user) {
     var url = this.API_URL + "/member/login";
-    return this.httpService.httpPostNoAuth(url, user);
+    return this.httpService.httpPutNoAuth(url, user);
   }
 
   //注册

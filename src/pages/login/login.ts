@@ -81,7 +81,7 @@ export class LoginPage {
 
 
   logForm(){
-    alert("logForm");
+    //alert("logForm");
     //通过表单方式提交
     this.navCtrl.push(RegisterPage);
   }
