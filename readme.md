@@ -16,7 +16,10 @@ template: `
        {{ hero }}  
      </li>  
    </ul>  
- `  
+ `
+   
+2.通过 NgIf 进行条件显示, 以下实例中我们判断如果网站数 3 个以上，输出提示信息：修改以下 app.component.ts 文件，代码如下：
+<p *ngIf="sites.length > 3">你有很多个喜欢的网站!</p>
 
 
 （二）Ionic页面的生命周期
@@ -56,3 +59,14 @@ onPageWillUnload() {
 onPageDidUnload() {  
   
 }  
+
+
+//---------------------------------------
+1. 添加移动平台
+cordova platform add ios（android）；（ionic platform add android）
+2.添加第三方插件，比如
+ionic plugin add cordova-plugin-camera
+3.创建新页面 （新添加的页面一定要在app.module.ts 中注册，否则会提示找不到，没有定义）
+ionic g page camera
+4.在手机上运行(在浏览器上运行 ionic serve)
+cordova run android,
