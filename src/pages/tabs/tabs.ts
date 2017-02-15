@@ -3,6 +3,7 @@ import { Tabs } from 'ionic-angular';
 import { NewsPage } from '../news/news';
 import { MoviePage } from '../movie/movie';
 import { AboutPage } from '../about/about';
+import {ProductPage} from "../product/product";
 
 @Component({
   templateUrl: 'tabs.html'
@@ -14,6 +15,7 @@ export class TabsPage {
   tab1Root: any = NewsPage;
   tab2Root: any = MoviePage;
   tab3Root: any = AboutPage;
+  tab4Root: any = ProductPage;
 
   constructor() {
 

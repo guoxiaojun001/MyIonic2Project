@@ -34,7 +34,6 @@ export class HttpService {
 
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-      headers.append('Content-Type', 'application/json');
 
         let options = new RequestOptions({ headers: headers });
         return this.http.get(url, options).toPromise()
