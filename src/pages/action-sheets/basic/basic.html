@@ -1,0 +1,62 @@
+
+<ion-header class="action-sheets-basic-page">
+  <ion-navbar color="primary">
+    <ion-title>相机</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="action-sheets-basic-page">
+  <button ion-button style=" width: 31%;padding: 0px"  (click)="takePhoto()">
+    拍照
+  </button>
+  <button ion-button style="width: 31%;padding: 0px" (click)="choosePhoto()">
+    选择照片
+  </button>
+  <button ion-button  style="width: 31%;padding: 0px" (click)="chooseVideo()">
+    选择视频
+  </button>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+        <ion-item [class.error]="!tieluxian.valid && tieluxian.touched">
+            <ion-label>说明1：</ion-label>
+          <ion-input type="text" value="" [formControl]="tieluxian" [(ngModel)]="user.info"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>说明2：</ion-label>
+            <ion-input type="text" value="" [formControl]="tieluzhan" clearInput=true></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>说明3：</ion-label>
+            <ion-input type="text" value="" [formControl]="shangbaoren" clearInput=true></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>说明4：</ion-label>
+            <ion-input type="text" value="" [formControl]="gonglibiao" clearInput=true></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>说明5：</ion-label>
+            <ion-input  type="text" value="" [formControl]="shijianmiaoshu" clearInput=true></ion-input>
+        </ion-item>
+
+        <ion-avatar style="text-align: center; " >
+            <img [src]="profilePicture" style="margin: 5px auto;border-radius: 5% ;max-width: 70%; max-height: 30%" />
+        </ion-avatar>
+
+      <button ion-button block color="secondary" type="submit" [disabled]="!loginForm.valid">上传</button>
+
+
+
+    </form>
+
+
+  <button ion-button color="secondary" outline (click)="testDemo()">{{textDemo}}</button>
+  <button ion-button color="secondary" outline (click)="jumpPage()">跳转到列表页面{{textDemo}}</button>
+
+
+</ion-content>

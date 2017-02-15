@@ -1,0 +1,20 @@
+<ion-menu type="push" [content]="content">
+    <ion-content>
+        <div class="dis-t menu-header">
+            <div class="dis-tc c-b">
+                <img class="menu-user-photo" src="assets/image/user.jpg">
+                <h2>dPary</h2>
+            </div>
+        </div>
+        <!--<ion-list>-->
+        <!--<button menuClose ion-item icon-left *ngFor="let p of pages" (click)="openPage(p)">-->
+          <button menuClose ion-item icon-left *ngFor="let p of pages" (click)="openPage(p.component)">
+                <ion-icon [name]="p.icon" color="primary" item-left></ion-icon>{{p.title}}
+      </button>
+        <!--</ion-list>-->
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
