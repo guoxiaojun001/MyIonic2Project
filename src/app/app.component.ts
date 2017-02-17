@@ -30,7 +30,8 @@ export class MyApp {
       { title: '图表', icon: 'md-analytics', component: EchartsPage },
       { title: '相机', icon: 'md-analytics', component: BasicPage },
 
-      { title: '登录', icon: 'md-analytics', component: LoginPage }
+      { title: '登录', icon: 'md-analytics', component: LoginPage },
+      { title: '我的借款', icon: 'md-analytics', component: LoginPage }
     ];
 
   }

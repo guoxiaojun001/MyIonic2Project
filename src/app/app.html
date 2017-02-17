@@ -1,5 +1,5 @@
 <ion-menu type="push" [content]="content">
-    <ion-content>
+    <ion-content color="primary">
         <div class="dis-t menu-header">
             <div class="dis-tc c-b">
                 <img class="menu-user-photo" src="assets/image/user.jpg">
@@ -12,6 +12,12 @@
                 <ion-icon [name]="p.icon" color="primary" item-left></ion-icon>{{p.title}}
       </button>
         <!--</ion-list>-->
+
+      <div>
+        <button ion-button full
+                style="position:absolute; right:0px; bottom:0px;">设置</button>
+      </div>
+
     </ion-content>
 
 </ion-menu>

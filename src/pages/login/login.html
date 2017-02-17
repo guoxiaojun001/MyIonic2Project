@@ -17,13 +17,16 @@
 	<form [formGroup]="loginForm" (ngSubmit)="logForm()">
 		<ion-item>
 			<ion-label>用户名：</ion-label>
-			<ion-input type="text" formControlName="mobilePhone"></ion-input>
+			<ion-input type="text" text-wrap formControlName="mobilePhone"></ion-input>
+      <ion-avatar item-right><img src="assets/image/video.png" ></ion-avatar>
 		</ion-item>
-		<!--<p *ngIf="!loginForm.controls.LoginID.valid && loginForm.controls.LoginID.touched" color="danger">LoginID 必须是邮箱.</p>-->
 
 		<ion-item>
 			<ion-label>密码：</ion-label>
 			<ion-input type="password" formControlName="password"></ion-input>
+
+      <ion-thumbnail item-right> <img src="assets/image/video.png" alt="头像"></ion-thumbnail>
+
 		</ion-item>
 		<button ion-button full (click)="login(loginForm.value, $event)" >登录</button>
 		<button ion-button full (click)="goRegisterPage($event)">注册</button>

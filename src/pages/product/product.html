@@ -12,7 +12,21 @@
     <ion-title>产品</ion-title>
   </ion-navbar>
 </ion-header>
+
+
+
+
+
 <ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content
+  pullingIcon="arrow-dropdown"
+  pullingText="Pull to refresh"
+  refreshingSpinner="circles"
+  refreshingText="Refreshing...">
+  </ion-refresher-content>
+  </ion-refresher>
 
   <!--//没有获取到数据的时候  显示404图片-->
   <div *ngIf="hasErr">
@@ -26,6 +40,8 @@
       <ion-spinner name="bubbles"></ion-spinner>
     </div>
     <div *ngIf="dataFinish">
+
+
 
       <!--//轮播图-->
       <!--<ion-slides autoplay="2000" loop="true" pager="true">-->
@@ -42,18 +58,21 @@
         <ion-card *ngFor="let item of homeList.card">
           <ion-item text-wrap (click)="pushContent(item.name)">
             <ion-thumbnail item-right>
-              <img [src]="homeList.image">
+              <!--<img [src]="homeList.image">-->
+              <img src="{{homeList.image}}">
             </ion-thumbnail>
             <h2>{{item.name}}</h2>
+            <h2>测试 {{homeList.desc}}</h2>
+
           </ion-item>
         </ion-card>
       </ion-list>
 
 
       <!--//下拉加载-->
-      <!--<ion-infinite-scroll (ionInfinite)="getMoreZhihuList($event)">-->
-        <!--<ion-infinite-scroll-content loadingText="加载中..."></ion-infinite-scroll-content>-->
-      <!--</ion-infinite-scroll>-->
+      <ion-infinite-scroll >
+        <ion-infinite-scroll-content loadingText="加载中..."></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
     </div>
   </div>
 </ion-content>

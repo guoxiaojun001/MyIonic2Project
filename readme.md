@@ -70,3 +70,19 @@ ionic plugin add cordova-plugin-camera
 ionic g page camera
 4.在手机上运行(在浏览器上运行 ionic serve)
 cordova run android,
+
+
+
+//----------------------
+
+这种方式显示图片 可以圆角，并且大小适中
+ <ion-avatar item-right><img src="assets/image/video.png" alt="头像"></ion-avatar>
+ 
+ 
+ 这种方式图片比较大
+ <ion-thumbnail item-right> <img src="assets/image/video.png" ></ion-thumbnail>
+ 
+ 
+ 以下两种效果好像一样
+ <!--<img [src]="homeList.image">-->
+ <img src="{{homeList.image}}">
