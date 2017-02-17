@@ -7,6 +7,7 @@ import { EchartsPage } from '../pages/echarts/echarts';
 import { BasicPage }from '../pages/action-sheets/basic/pages'
 
 import { LoginPage }from '../pages/login/login'
+import {MypointPage} from "../pages/mypoint/mypoint";
 
 
 @Component({
@@ -31,7 +32,7 @@ export class MyApp {
       { title: '相机', icon: 'md-analytics', component: BasicPage },
 
       { title: '登录', icon: 'md-analytics', component: LoginPage },
-      { title: '我的借款', icon: 'md-analytics', component: LoginPage }
+      { title: '我的积分', icon: 'md-analytics', component: MypointPage }
     ];
 
   }

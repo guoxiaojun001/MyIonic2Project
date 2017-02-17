@@ -24,6 +24,8 @@ import { MyinfoPage } from '../pages/myinfo/myinfo';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ProductPage } from '../pages/product/product';
+import {MypointPage } from '../pages/mypoint/mypoint';
+
 //页面要加这里
 
 
@@ -54,7 +56,8 @@ import { Data } from '../providers/data';
     RegisterPage,
     MyinfoPage,
     BackHomePage,
-    ProductPage
+    ProductPage,
+    MypointPage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{
@@ -85,7 +88,8 @@ import { Data } from '../providers/data';
     RegisterPage,
     MyinfoPage,
     BackHomePage,
-    ProductPage
+    ProductPage,
+    MypointPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
     Data,HttpService,StorageService]
