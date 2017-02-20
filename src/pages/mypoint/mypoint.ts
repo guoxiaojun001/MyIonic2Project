@@ -17,10 +17,13 @@ export class MypointPage {
   segmentsArray = ['segmentOne','segmentTwo'];
   segmentModel: string = this.segmentsArray[0];
 
+  isFetching: boolean
+  isMore: boolean
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public actionSheetCtrl: ActionSheetController,
-              platform: Platform) {
+              public platform: Platform) {
     this.isAndroid = platform.is('android');
   }
 
@@ -34,10 +37,12 @@ export class MypointPage {
   presentActionSheet() {
     let actionSheet = this.actionSheetCtrl.create({
       title: '提示',
+      cssClass: 'action-sheets-basic-page',
       buttons: [
         {
           text: '保存',
           role: 'destructive',
+          icon: !this.platform.is('ios') ? 'trash' : "trash",
           handler: () => {
             //this.saveImage(imgUrl);
             alert('保存 clicked');
@@ -46,6 +51,7 @@ export class MypointPage {
         {
           text: '取消',
           role: 'cancel',
+          icon: !this.platform.is('ios') ? 'heart-outline' : "heart-outline",
           handler: () => {
             alert('取消 clicked');
           }
@@ -68,14 +74,14 @@ export class MypointPage {
   swipeEvent(event) {
     //向左滑
     if (event.direction == 2) {
-      alert("向左滑")
+      //alert("向左滑")
       if (this.segmentsArray.indexOf(this.segmentModel) < 1) {
         this.segmentModel = this.segmentsArray[this.segmentsArray.indexOf(this.segmentModel) + 1];
       }
     }
 //向右滑
     if (event.direction == 4) {
-      alert("向右滑")
+      //alert("向右滑")
       if (this.segmentsArray.indexOf(this.segmentModel) > 0) {
         this.segmentModel = this.segmentsArray[this.segmentsArray.indexOf(this.segmentModel) - 1];
       }

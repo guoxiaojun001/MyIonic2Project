@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, PopoverController, ActionSheetController, ViewController } from 'ionic-angular';
+import {
+  NavController, NavParams, PopoverController, ActionSheetController, ViewController,
+  Platform
+} from 'ionic-angular';
 
 import { UserInfoService } from "./../../providers/UserInfoService";
 import { UserInfoData } from "./../../model/UserInfoData";
@@ -17,8 +20,8 @@ export class MyinfoPage {
     navParams: NavParams,
     private userInfoService: UserInfoService,
     public actionSheetCtrl: ActionSheetController,
-    private popoverCtrl: PopoverController
-  ) {
+    private popoverCtrl: PopoverController,
+              public platform: Platform  ) {
     this.id = navParams.get('item');//这个是通过页面跳转传过来的值
     this.getInfo();
   }
@@ -43,6 +46,7 @@ export class MyinfoPage {
         {
           text: '保存',
           role: 'destructive',
+          icon: !this.platform.is('android') ? 'trash' : null,
           handler: () => {
             //this.saveImage(imgUrl);
             alert('保存 clicked');
@@ -51,6 +55,7 @@ export class MyinfoPage {
         {
           text: '取消',
           role: 'cancel',
+          icon: !this.platform.is('android') ? 'trash' : null,
           handler: () => {
             alert('取消 clicked');
           }

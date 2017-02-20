@@ -14,6 +14,16 @@
 
 
 <ion-content padding>
+  <div class="list list-inset">
+    <label class="item item-input">
+      <input type="text" placeholder="First Name">
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Last Name">
+    </label>
+  </div>
+
+
 	<form [formGroup]="loginForm" (ngSubmit)="logForm()">
 		<ion-item>
 			<ion-label>用户名：</ion-label>
@@ -33,4 +43,15 @@
 
     <button ion-button full type="submit" class="btn btn-default">测试表单</button>
 	</form>
+
+
+  <div class="bar bar-header item-input-inset" align="center">
+    <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" placeholder="Search">
+    </label>
+    <button class="button button-clear" >
+      Cancel
+    </button>
+  </div>
 </ion-content>

@@ -86,3 +86,14 @@ cordova run android,
  以下两种效果好像一样
  <!--<img [src]="homeList.image">-->
  <img src="{{homeList.image}}">
+
+
+5. Ionic2中的Provider、Service、Observable与Promise
+    Ionic2中Provider也就是一个Service, 可以用ionic g provider PeopleService命令来生成一个
+    名称为PeopleService的provider 。
+
+    Observable相对Promise有许多优势，因此Angular2中使用了RxJS。而当前Ionic中生成provider代码时使用的是ng2中的http模块，它是个observable,
+     但then( )返回将它转为一个promise返回, ionic团队正在计划修改。
+
+6.  ionic-native与ngCordoava
+    Ionic 2中ionic-native替换了ngCordoava。
