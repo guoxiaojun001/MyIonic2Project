@@ -25,6 +25,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { ProductPage } from '../pages/product/product';
 import {MypointPage } from '../pages/mypoint/mypoint';
+import { MyloanPage } from '../pages/myloan/myloan';
 
 //页面要加这里
 
@@ -33,6 +34,8 @@ import {MypointPage } from '../pages/mypoint/mypoint';
 import {HttpService} from "../providers/HttpService";
 import {StorageService} from "../providers/StorageService";
 import { Data } from '../providers/data';
+
+import { Storage } from '@ionic/storage';
 
 
 @NgModule({
@@ -57,7 +60,8 @@ import { Data } from '../providers/data';
     MyinfoPage,
     BackHomePage,
     ProductPage,
-    MypointPage
+    MypointPage,
+    MyloanPage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{
@@ -89,9 +93,10 @@ import { Data } from '../providers/data';
     MyinfoPage,
     BackHomePage,
     ProductPage,
-    MypointPage
+    MypointPage,
+    MyloanPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
-    Data,HttpService,StorageService]
+    Data,HttpService,StorageService ,Storage]
 })
 export class AppModule { }

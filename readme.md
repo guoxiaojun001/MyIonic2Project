@@ -97,3 +97,30 @@ cordova run android,
 
 6.  ionic-native与ngCordoava
     Ionic 2中ionic-native替换了ngCordoava。
+
+
+
+-------------------------------------
+大家常常会在ionic2页面中见到*号的存在，如： 
+<p *ngIf="someBoolean"><p> 
+含义与： 
+<template [ngIf]="someBoolean"> 
+<p></p> 
+</template> 
+即：如果someBoolean值为true，则显示<p></p>标签，否则，不显示<p></p>标签 
+     
+<p *ngFor="let item of items">{{item.name}}</p> 
+含义： 
+获取一个列表items，并遍历其中的元素item，然后显示这个元素的name属性的值 
+     
+<div [ngSwitch]="paragraphNumber"> 
+<p *ngSwitchWhen="1">Paragraph 1</p> 
+<p *ngSwitchWhen="2">Paragraph 2</p> 
+<p *ngSwitchWhen="3">Paragraph 3</p> 
+<p *ngSwitchDefault>Paragraph</p> </div> 
+当 
+paragraphNumber=1时，显示: Paragraph 1 
+paragraphNumber=2时，显示: Paragraph 2 
+依次类推 
+默认显示：Paragraph 
+

@@ -5,7 +5,7 @@ import { NavController } from 'ionic-angular';
 
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import {NgZone} from 'angular2/core';
-import { Camera } from 'ionic-native';
+import {Camera, Crop} from 'ionic-native';
 import { Transfer } from 'ionic-native';
 // import { FileUploadOptions } from 'ionic-native';
 
@@ -231,6 +231,16 @@ export class BasicPage {
     this.navCtrl.push(BackHomePage );
   }
 
+
+
+  cropImage(pathToImage :string,percent : number){
+    alert("cropImage = " + pathToImage + percent)
+    Crop.crop(pathToImage, {quality: percent})
+      .then(
+        newImage => console.log("new image path is: " + newImage),
+        error => console.error("Error cropping image", error)
+      );
+  }
 
   test(){
 

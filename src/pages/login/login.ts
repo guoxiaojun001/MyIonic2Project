@@ -10,6 +10,8 @@ import { MyinfoPage } from '../myinfo/myinfo';
 import {UserInfoService} from "../../providers/UserInfoService";
 import {UserInfoData} from "../../model/UserInfoData";
 
+import { Storage } from '@ionic/storage';
+
 
 @Component({
   selector: 'page-login',
@@ -18,13 +20,13 @@ import {UserInfoData} from "../../model/UserInfoData";
 })
 export class LoginPage {
 
-  local: Storage;
   constructor(
     public navCtrl: NavController,
     private formBuilder: FormBuilder,
     public toastCtrl: ToastController,
     private userInfoService: UserInfoService,
-    private storageService: StorageService) { }
+    private storageService: StorageService,
+    private storage: Storage) { }
 
   loginForm = this.formBuilder.group({
     'mobilePhone': '18810500248',// 第一个参数是默认值
@@ -37,37 +39,49 @@ export class LoginPage {
 
   login(user, _event) {
     _event.preventDefault();//该方法将通知 Web 浏览器不要执行与事件关联的默认动作
-    this.userInfoService.login(user).then(data => {
 
-      var responseData = JSON.stringify(data);
-      alert(responseData);
+    this.storageService.write('test', "我是测试本地存储");//测试本地存储
+    this.storage.set('sql', '我是sqlite存储'); //测试sqlite
 
-      if(data.code == "success"){
-        alert("//登录成功");
 
-      }
+    console.log(this.storageService.read("test"));
+    //console.log(this.storage.get("sql"));
+    this.storage.get('sql').then((val) => {
+      console.log('Your age is', val);
+    })
 
-      // if (data.Result.ID > 0)//登录成功
-      // {
-      //   this.storageService.write('UserInfo', data.Result);
-      //   //测试写缓存
-      //   let ss = this.storageService.read<UserInfoData>('UserInfo');
-      //   console.log(ss.UserToken);
-      //   alert(ss.UserToken);
-      //   //传参
-      //   this.navCtrl.push(MyinfoPage, { item: data.Result.ID });
-      // }
-      // else {
-      //   let toast = this.toastCtrl.create({
-      //     message: '用户名或密码错误.',
-      //     duration: 3000,
-      //     position: 'middle',
-      //     showCloseButton: true,
-      //     closeButtonText: '关闭'
-      //   });
-      //   toast.present();
-      // }
-    });
+
+    // this.userInfoService.login(user).then(data => {
+    //
+    //   var responseData = JSON.stringify(data);
+    //   alert(responseData);
+    //
+    //   if(data.code == "success"){
+    //     alert("//登录成功");
+    //
+    //   }
+    //
+    //   // if (data.Result.ID > 0)//登录成功
+    //   // {
+    //   //   this.storageService.write('UserInfo', data.Result);
+    //   //   //测试写缓存
+    //   //   let ss = this.storageService.read<UserInfoData>('UserInfo');
+    //   //   console.log(ss.UserToken);
+    //   //   alert(ss.UserToken);
+    //   //   //传参
+    //   //   this.navCtrl.push(MyinfoPage, { item: data.Result.ID });
+    //   // }
+    //   // else {
+    //   //   let toast = this.toastCtrl.create({
+    //   //     message: '用户名或密码错误.',
+    //   //     duration: 3000,
+    //   //     position: 'middle',
+    //   //     showCloseButton: true,
+    //   //     closeButtonText: '关闭'
+    //   //   });
+    //   //   toast.present();
+    //   // }
+    // });
   }
 
 
