@@ -9,6 +9,7 @@ import { BasicPage }from '../pages/action-sheets/basic/pages'
 import { LoginPage }from '../pages/login/login'
 import {MypointPage} from "../pages/mypoint/mypoint";
 import {MyloanPage} from "../pages/myloan/myloan";
+import {MycustomerPage} from "../pages/mycustomer/mycustomer";
 
 
 @Component({
@@ -34,7 +35,9 @@ export class MyApp {
 
       { title: '登录', icon: 'md-analytics', component: LoginPage },
       { title: '我的积分', icon: 'md-analytics', component: MypointPage },
-      { title: '我的借款', icon: 'md-analytics', component: MyloanPage }
+      { title: '我的借款', icon: 'md-analytics', component: MyloanPage },
+      { title: '我的客户', icon: 'md-analytics', component: MycustomerPage },
+      { title: '我是热更新222', icon: 'md-analytics', component: MycustomerPage }
     ];
 
   }

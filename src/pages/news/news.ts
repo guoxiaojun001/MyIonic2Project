@@ -9,8 +9,8 @@ import { Data } from '../../providers/data';
 })
 export class NewsPage {
   zhihuList: any;
-  dataFinish: boolean = false;
   date: Date = new Date();
+  dataFinish: boolean = false;
   hasErr: boolean = false;
   constructor(public navCtrl: NavController, public data: Data) {
 

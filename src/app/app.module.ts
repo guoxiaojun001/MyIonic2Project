@@ -36,6 +36,7 @@ import {StorageService} from "../providers/StorageService";
 import { Data } from '../providers/data';
 
 import { Storage } from '@ionic/storage';
+import {MycustomerPage} from "../pages/mycustomer/mycustomer";
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { Storage } from '@ionic/storage';
     BackHomePage,
     ProductPage,
     MypointPage,
-    MyloanPage
+    MyloanPage,
+    MycustomerPage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{
@@ -94,7 +96,8 @@ import { Storage } from '@ionic/storage';
     BackHomePage,
     ProductPage,
     MypointPage,
-    MyloanPage
+    MyloanPage,
+    MycustomerPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
     Data,HttpService,StorageService ,Storage]
