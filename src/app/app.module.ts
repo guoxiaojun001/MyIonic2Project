@@ -26,6 +26,9 @@ import { RegisterPage } from '../pages/register/register';
 import { ProductPage } from '../pages/product/product';
 import {MypointPage } from '../pages/mypoint/mypoint';
 import { MyloanPage } from '../pages/myloan/myloan';
+import { TestPluginPage } from '../pages/test-plugin/test-plugin';
+
+
 
 //页面要加这里
 
@@ -63,7 +66,8 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
     ProductPage,
     MypointPage,
     MyloanPage,
-    MycustomerPage
+    MycustomerPage,
+    TestPluginPage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{
@@ -97,7 +101,8 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
     ProductPage,
     MypointPage,
     MyloanPage,
-    MycustomerPage
+    MycustomerPage,
+    TestPluginPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
     Data,HttpService,StorageService ,Storage]

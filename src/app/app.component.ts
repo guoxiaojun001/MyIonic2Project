@@ -10,7 +10,13 @@ import { LoginPage }from '../pages/login/login'
 import {MypointPage} from "../pages/mypoint/mypoint";
 import {MyloanPage} from "../pages/myloan/myloan";
 import {MycustomerPage} from "../pages/mycustomer/mycustomer";
+import {TestPluginPage} from "../pages/test-plugin/test-plugin";
 
+
+
+declare let MyPlugin: any;
+
+declare let DiyiPlugin: any;
 
 @Component({
   templateUrl: 'app.html'
@@ -37,7 +43,9 @@ export class MyApp {
       { title: '我的积分', icon: 'md-analytics', component: MypointPage },
       { title: '我的借款', icon: 'md-analytics', component: MyloanPage },
       { title: '我的客户', icon: 'md-analytics', component: MycustomerPage },
-      { title: '我是热更新222', icon: 'md-analytics', component: MycustomerPage }
+      { title: '插件测试', icon: 'md-analytics', component: TestPluginPage }
+
+
     ];
 
   }
@@ -93,6 +101,28 @@ export class MyApp {
   //   param2:any;
   //   this.nav.push(page.component,{param1:'11111',param2:'222'});
   // }
+
+
+    //测试插件
+  testPlugin(){
+    DiyiPlugin.diyiciFangFaMing("DiyiPlugin 传来的参数",
+        function(msg) {
+          alert("成功了" + msg);},//成功的回调
+        function(msg) {
+          alert("失败了"+msg);
+        });//失败的回调
+  }
+
+  testMyPlugin(){
+    MyPlugin.method2("MyPlugin 传来的参数",
+      function(msg) {
+        alert("成功了" + msg);},//成功的回调
+      function(msg) {
+        alert("失败了"+msg);
+      });//失败的回调
+  }
+
+
 
   //或者
   openPage(page){
