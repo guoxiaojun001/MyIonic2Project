@@ -24,7 +24,10 @@ plugman platform add --platform_name android
 
 //插件的添加和删除
 ionic plugin remove 插件名  //先根据上面的list列出插件，然后根据插件名卸载
+cordova plugin remove org.apache.cordova.xmqq
+
 ionic plugin  add  插件地址
+cordova plugin add thirdplugin/xmPlugin/
 
 
 5.将项目导入android studio，即可在src中看到插件的java代码，以及js代码（js代码在www目录下）
@@ -44,3 +47,14 @@ js文件只能在外部修改，然后重新把插件添加进来（暂时没有
 //---------------------
 (click)="callFunc2() //新版本的写法
  ng-click="callFunc2()" //这是老版本的写法
+
+
+//---------------------------------
+替换icon图标
+复杂方法可以搜“ionic自定义图标”。
+简单方法是直接借用 ion-tab 模板，“icon-on” 以及“icon-off”用自定义的class代替ion-*图标系列：
+
+
+如何在某个界面中去掉导航栏?
+
+如果某个界面上不想要导航栏，可以简单地在最顶端的标签中添加hide-nav-bar="true"
