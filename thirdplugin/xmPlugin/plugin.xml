@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="org.apache.cordova.xmqq" version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>xmPlugin</name>
+  <js-module name="XmPlugin" src="www/xmPlugin.js">
+  <clobbers target="XmPlugin" />
+
+</js-module><platform name="android">
+
+  <config-file parent="/*" target="res/xml/config.xml">
+
+    <feature name="XmPlugin">
+      <param name="android-package" value="org.apache.cordova.xmqq.XmPlugin" />
+
+    </feature>
+  </config-file>
+  <config-file parent="/*" target="AndroidManifest.xml">
+
+  </config-file>
+  <source-file src="src/android/XmPlugin.java" target-dir="src/org/apache/cordova/xmqq" />
+</platform></plugin>
