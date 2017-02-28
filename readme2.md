@@ -58,3 +58,7 @@ js文件只能在外部修改，然后重新把插件添加进来（暂时没有
 如何在某个界面中去掉导航栏?
 
 如果某个界面上不想要导航栏，可以简单地在最顶端的标签中添加hide-nav-bar="true"
+
+
+
+7.如果下载的项目没有node_modules目录， 执行ionic serve 提示npm  install，在项目目录下执行npm  install即可

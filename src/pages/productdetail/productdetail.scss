@@ -105,7 +105,7 @@ page-productdetail {
         padding: 16px;
         font-size: 1.6rem;
         color: #222;
-        border-left: 5px solid #2eb3fe;
+        border-left: 15px solid #2eb3fe;
         //border-bottom: 1px solid #dedede;
         display: block;
         overflow: hidden;
@@ -136,6 +136,7 @@ page-productdetail {
   // 支付订单或取消订单的按钮
   .order-detail-btn {
     padding: 0.4rem 1.8rem;
+    padding-bottom: 10px;
   }
 
 

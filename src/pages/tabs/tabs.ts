@@ -5,6 +5,7 @@ import { MoviePage } from '../movie/movie';
 import { AboutPage } from '../about/about';
 import {ProductPage} from "../product/product";
 
+
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -19,5 +20,11 @@ export class TabsPage {
 
   constructor() {
 
+  }
+
+
+  //设置默认 选中第三个，在html中也可以设置 <ion-tabs #mainTabs selectedIndex="2">
+  ionViewDidEnter() {
+    this.tabs.select(0);
   }
 }

@@ -19,7 +19,6 @@ import { ListPage }from '../pages/list/list'
 import { ItemDetailsPage }from '../pages/item-details/item-details'
 
 import { BackHomePage } from '../pages/back-home/back-home';
-
 import { MyinfoPage } from '../pages/myinfo/myinfo';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
@@ -28,10 +27,11 @@ import {MypointPage } from '../pages/mypoint/mypoint';
 import { MyloanPage } from '../pages/myloan/myloan';
 import { TestPluginPage } from '../pages/test-plugin/test-plugin';
 import {ProductdetailPage} from "../pages/productdetail/productdetail";
-
-
-
+import { TutorialPage } from '../pages/tutorial/tutorial';
 //页面要加这里
+
+
+
 
 
 //服务要加这里
@@ -70,6 +70,7 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
     MyloanPage,
     MycustomerPage,
     TestPluginPage,
+    TutorialPage,
     ProductdetailPage
   ],
   imports: [
@@ -106,6 +107,7 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
     MyloanPage,
     MycustomerPage,
     TestPluginPage,
+    TutorialPage,
     ProductdetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },

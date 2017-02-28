@@ -1,19 +1,26 @@
-//
-//.bar-home {
-//  background: url("../../assets/image/video.png");
-//  width: 20px;
-//  height: 20px;
-//
-//
-//}
-//.bar-map {
-//  background:url(../../assets/image/video.png) no-repeat center;
-//}
-//.bar-suggest {
-//  background:url(../../assets/image/video.png) no-repeat center;
-//}
-//.bar-setting {
-//  background:url(../../assets/image/video.png) no-repeat center;
-//}
-//
-//
+page-tabs {
+
+  .ion-ios-tab-tab1 {
+    content: url("../assets/image/video.png");
+    width: 20px;
+    height: 20px;
+
+  }
+
+  .ion-ios-tab-tab1-outline {
+    content: url("../assets/image/404.png");
+    width: 20px;
+    height: 20px;
+  }
+
+
+  .ion-md-tab-tab1 {
+    content: url("../assets/image/video.png");
+  }
+
+  .ion-md-tab-tab1-outline {
+    content: url("../assets/image/404.png");
+  }
+}
+
+

@@ -5,12 +5,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { BaiduMapPage } from '../pages/baidu-map/baidu-map';
 import { EchartsPage } from '../pages/echarts/echarts';
 import { BasicPage }from '../pages/action-sheets/basic/pages'
+import { TutorialPage } from '../pages/tutorial/tutorial';
 
 import { LoginPage }from '../pages/login/login'
 import {MypointPage} from "../pages/mypoint/mypoint";
 import {MyloanPage} from "../pages/myloan/myloan";
 import {MycustomerPage} from "../pages/mycustomer/mycustomer";
 import {TestPluginPage} from "../pages/test-plugin/test-plugin";
+import { Storage } from '@ionic/storage';
 
 
 
@@ -18,12 +20,13 @@ declare let MyPlugin: any;
 
 declare let DiyiPlugin: any;
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = TabsPage;
+  rootPage: any /*= TabsPage*/; //先不指定启动页，判断后是否显示引导页
 
   pages: Array<{ title: string, icon: string, component: any }>;
   backButtonPressed: boolean = false;
@@ -31,8 +34,24 @@ export class MyApp {
 
   constructor(public platform: Platform,
   public toastCtrl: ToastController,
-  public menuCtrl: MenuController) {
-    this.initializeApp();
+  public menuCtrl: MenuController,
+              public storage: Storage) {
+
+    // Check if the user has already seen the tutorial
+    this.storage.get('hasSeenTutorial')
+      .then((hasSeenTutorial) => {
+        if (hasSeenTutorial) {
+          this.rootPage = TabsPage;
+        } else {
+          this.rootPage = TutorialPage;
+        }
+
+        //this.platformReady()
+        this.initializeApp();
+      })
+
+
+    // this.initializeApp();
 
     this.pages = [
       { title: '百度地图', icon: 'md-map', component: BaiduMapPage },
@@ -44,7 +63,6 @@ export class MyApp {
       { title: '我的借款', icon: 'md-analytics', component: MyloanPage },
       { title: '我的客户', icon: 'md-analytics', component: MycustomerPage },
       { title: '插件测试', icon: 'md-analytics', component: TestPluginPage }
-
 
     ];
 
@@ -120,6 +138,11 @@ export class MyApp {
       function(msg) {
         alert("失败了"+msg);
       });//失败的回调
+  }
+
+  //引导页
+  openTutorial(){
+    this.nav.setRoot(TutorialPage);
   }
 
 
