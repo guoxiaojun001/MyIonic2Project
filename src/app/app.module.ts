@@ -27,6 +27,7 @@ import { ProductPage } from '../pages/product/product';
 import {MypointPage } from '../pages/mypoint/mypoint';
 import { MyloanPage } from '../pages/myloan/myloan';
 import { TestPluginPage } from '../pages/test-plugin/test-plugin';
+import {ProductdetailPage} from "../pages/productdetail/productdetail";
 
 
 
@@ -40,6 +41,7 @@ import { Data } from '../providers/data';
 
 import { Storage } from '@ionic/storage';
 import {MycustomerPage} from "../pages/mycustomer/mycustomer";
+
 
 
 @NgModule({
@@ -67,7 +69,8 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
     MypointPage,
     MyloanPage,
     MycustomerPage,
-    TestPluginPage
+    TestPluginPage,
+    ProductdetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{
@@ -102,7 +105,8 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
     MypointPage,
     MyloanPage,
     MycustomerPage,
-    TestPluginPage
+    TestPluginPage,
+    ProductdetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
     Data,HttpService,StorageService ,Storage]

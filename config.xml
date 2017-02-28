@@ -19,10 +19,7 @@
       <splash src="resources/android/splash/splash.png"/>
     </platform>
   <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="5000" />
-
-  <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="10000" />
+  <preference name="SplashScreenDelay" value="2000" />
 
 
     <platform name="ios">

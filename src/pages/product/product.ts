@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Data } from '../../providers/data';
 
 import {HttpService} from "../../providers/HttpService";
+import {ProductdetailPage} from "../productdetail/productdetail";
 
 
 /*
@@ -66,8 +67,8 @@ export class ProductPage {
     }, 2000);
   }
 
-  pushContent(id) {
-    //this.navCtrl.push(NewsContentPage, { id: id });
+  pushContent(name) {
+    this.navCtrl.push(ProductdetailPage, { name: name });
   }
 
 
