@@ -6,7 +6,7 @@ import org.apache.cordova.CallbackContext;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.ionicframework.myionic2project571494.TestActivity;
+//import com.ionicframework.myionic2project571494.TestActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,7 +41,12 @@ public class XmPlugin extends CordovaPlugin {
       //callbackContext.success("method02 调用成功" + message + message1);
 
 
-      Intent intent  = new Intent(this.cordova.getActivity(),TestActivity.class);
+      //Intent intent  = new Intent(this.cordova.getActivity(),TestActivity.class);
+      //无侵入方式调用
+      Intent intent = new Intent();
+      //设置 Intent 的动作
+      intent.setAction("com.xmqq.test");
+
       intent.putExtra("parm",message);
       this.cordova.startActivityForResult(XmPlugin.this,intent,100);
 
