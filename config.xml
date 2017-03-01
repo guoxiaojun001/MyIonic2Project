@@ -20,6 +20,8 @@
     </platform>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="2000" />
+  <!--不显示转动的圆圈-->
+  <preference name="ShowSplashScreenSpinner" value="false"/>
 
 
     <platform name="ios">

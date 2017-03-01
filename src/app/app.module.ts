@@ -41,6 +41,8 @@ import { Data } from '../providers/data';
 
 import { Storage } from '@ionic/storage';
 import {MycustomerPage} from "../pages/mycustomer/mycustomer";
+import {UserData} from "../providers/user-data";
+import {ConferenceData} from "../providers/conference-data";
 
 
 
@@ -111,6 +113,6 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
     ProductdetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
-    Data,HttpService,StorageService ,Storage]
+    Data,HttpService,StorageService ,Storage ,UserData,ConferenceData]
 })
 export class AppModule { }

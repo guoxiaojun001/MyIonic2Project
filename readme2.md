@@ -62,3 +62,6 @@ js文件只能在外部修改，然后重新把插件添加进来（暂时没有
 
 
 7.如果下载的项目没有node_modules目录， 执行ionic serve 提示npm  install，在项目目录下执行npm  install即可
+
+
+8. 在项目中展示html网页，$ ionic plugin add cordova-plugin-themeablebrowser 插件

@@ -2,7 +2,11 @@ import {Component} from '@angular/core';
 import {NavController, Loading, Toast, ViewController} from 'ionic-angular';
 // import {RegisterSubPage} from '../login/register_sub'
 import {Http, Headers, RequestOptions}from '@angular/http';
+import {TabsPage} from "../tabs/tabs";
+import {UserData} from "../../providers/user-data";
 // import {Helper} from '../helper/helper'
+import { NgForm } from '@angular/forms';
+
 @Component({
   templateUrl: 'register.html'
 })
@@ -21,8 +25,12 @@ export class RegisterPage {
   headers: Headers;
   options: RequestOptions;
   // helper: Helper;
+  signup: {username?: string, password?: string} = {};
+  submitted = false;
 
-  constructor(private nav: NavController, private http: Http, private viewCtrl: ViewController) {
+  constructor(private nav: NavController, private http: Http,
+              private viewCtrl: ViewController,
+              public userData: UserData) {
     //this.helper = new Helper(nav);
   }
 
@@ -98,7 +106,19 @@ export class RegisterPage {
     if ((/^1[3|4|5|7|8]\d{9}$/.test(phone))) {
       return true
     }
+
+    alert("密码不符合规则")
     return false;
+  }
+
+
+  checkPassword(){
+    if (this.signup.password.length < 6 || this.signup.password.length > 12) {
+      alert('密码长度6-12位');
+      return false;
+    }
+
+    return true;
   }
 
   goBack() {
@@ -163,5 +183,15 @@ export class RegisterPage {
 
   ionViewWillEnter() {
     this.viewCtrl.setBackButtonText('返回');
+  }
+
+
+  onSignup(form: NgForm) {
+    this.submitted = true;
+
+    if (form.valid && this.checkPhoneFormat(this.signup.username) && this.checkPassword()) {//基本验证
+      this.userData.signup(this.signup.username);
+      this.nav.push(TabsPage);
+    }
   }
 }

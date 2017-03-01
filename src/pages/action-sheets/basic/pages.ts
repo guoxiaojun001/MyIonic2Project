@@ -1,16 +1,77 @@
 import { Component ,ViewChild} from '@angular/core';
 
-import {Platform, ActionSheetController, NavParams, ToastController, Nav} from 'ionic-angular';
+import {Platform, ActionSheetController, NavParams, ToastController, Nav, ViewController} from 'ionic-angular';
 import { NavController } from 'ionic-angular';
 
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import {NgZone} from 'angular2/core';
 import {Camera, Crop} from 'ionic-native';
 import { Transfer } from 'ionic-native';
+import { ThemeableBrowser } from 'ionic-native';
 // import { FileUploadOptions } from 'ionic-native';
 
 import { ListPage } from '../../list/list';
 import { BackHomePage } from '../../back-home/back-home';
+
+
+let options = {
+  // statusbar: {
+  //   color: '#ffffffff'
+  // },
+  // toolbar: {
+  //   height: 44,
+  //   color: '#f0f0f0ff'
+  // },
+  // title: {
+  //   color: '#003264ff',
+  //   showPageTitle: true
+  // },
+  backButton: {
+    image: 'assets/image/video.png',
+    imagePressed: 'back_pressed',
+    align: 'left',
+    event: 'backPressed'
+  },
+  // forwardButton: {
+  //   image: 'forward',
+  //   imagePressed: 'forward_pressed',
+  //   align: 'left',
+  //   event: 'forwardPressed'
+  // },
+  // closeButton: {
+  //   image: 'close',
+  //   imagePressed: 'close_pressed',
+  //   align: 'left',
+  //   event: 'closePressed'
+  // },
+  // customButtons: [
+  //   {
+  //     image: 'share',
+  //     imagePressed: 'share_pressed',
+  //     align: 'right',
+  //     event: 'sharePressed'
+  //   }
+  // ],
+  // menu: {
+  //   image: 'menu',
+  //   imagePressed: 'menu_pressed',
+  //   title: 'Test',
+  //   cancel: 'Cancel',
+  //   align: 'right',
+  //   items: [
+  //     {
+  //       event: 'helloPressed',
+  //       label: 'Hello World!'
+  //     },
+  //     {
+  //       event: 'testPressed',
+  //       label: 'Test!'
+  //     }
+  //   ]
+  // },
+  backButtonCanClose: false
+};
+
 
 
 @Component({
@@ -45,7 +106,8 @@ export class BasicPage {
 
   constructor(public navCtrl: NavController, private formBuilder: FormBuilder,
               public navParams: NavParams,
-              public toastCtrl: ToastController) {
+              public toastCtrl: ToastController,
+              public viewCtrl: ViewController) {
 
     //获取传递过来的参数
     this.param1=navParams.get("param1");
@@ -251,6 +313,17 @@ export class BasicPage {
   }
 
 
+
+  close(url: string) {
+    window.open(url, '_blank');
+    this.viewCtrl.dismiss();
+  }
+
+
+  htmlLoad(){
+    let browser = new ThemeableBrowser('https://www.baidu.com', '_blank', options);
+    browser.show;
+  }
 
 
 }

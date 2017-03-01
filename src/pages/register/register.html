@@ -4,27 +4,76 @@
       用户注册
     </ion-title>
     <ion-buttons end>
-      <button block (click)="goToSetPasswordPage()">
+      <button ion-button (click)="goToSetPasswordPage()">
         下一步
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+
+
 <ion-content padding>
   <ion-list>
     <ion-item>
       <ion-label primary fixed>手机</ion-label>
       <ion-input type="tel" [(ngModel)]="inputPhoneNumber"></ion-input>
     </ion-item>
+
     <ion-item>
-      <ion-label primary fixed>验证码</ion-label>
+      <ion-label primary fixed color="primary">验证码</ion-label>
       <ion-input type="tel" [(ngModel)]="inputYZM"></ion-input>
       <ion-avatar item-right>
-        <button id="btnExcel" secondary round (click)="sendYZM(60)">{{btnText}}</button>
+        <button id="btnExcel" ion-button round (click)="setTime(60)">{{btnText}}</button>
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item>
+      <ion-label primary fixed color="primary">验证码</ion-label>
+      <ion-avatar item-right>
+        <button ion-button round (click)="setTime(60)">{{btnText}}</button>
       </ion-avatar>
     </ion-item>
 
   </ion-list>
+
+
+
+  <form #signupForm="ngForm" novalidate>
+    <ion-list no-lines>
+      <ion-item>
+        <ion-label stacked color="primary">用户名：</ion-label>
+        <ion-input [(ngModel)]="signup.username" name="username"
+                   type="text" #username="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        请输入用户名
+      </p>
+
+      <ion-item>
+        <ion-label stacked color="primary">密码：</ion-label>
+        <ion-input [(ngModel)]="signup.password" name="password"
+                   type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        请输入密码
+      </p>
+
+      <ion-item>
+        <ion-label primary fixed color="primary">验证码</ion-label>
+        <ion-avatar item-right>
+          <button ion-button round (click)="setTime(60)">{{btnText}}</button>
+        </ion-avatar>
+      </ion-item>
+
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button (click)="onSignup(signupForm)" type="submit" block>注册</button>
+    </div>
+  </form>
 
 
 </ion-content>

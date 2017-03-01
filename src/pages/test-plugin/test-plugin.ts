@@ -23,6 +23,8 @@ declare let XmPlugin: any;
 })
 export class TestPluginPage {
 
+  profilePicture: any /*= "assets/image/qrcode.jpg"*/;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.registerBroadcast();
 
@@ -42,6 +44,7 @@ export class TestPluginPage {
 
   registerBroadcast(){
     console.log( "register didShow received!" );
+
     // Broadcaster.addEventListener( "test.java", function( e ) {
     //   //log: didShow received! userInfo: {"data":"test"}
     //   console.log( "didShow received! userInfo: " + JSON.stringify(e)  );
@@ -50,7 +53,7 @@ export class TestPluginPage {
   }
 
 
-  openCamera(){
+  testPlugin(){
     //alert("openCamera");
 
     XmPlugin.method02("func2传来的参数0","func2传来的参数1",
@@ -59,6 +62,20 @@ export class TestPluginPage {
       function(msg) {
         alert("失败了"+msg);
       });//失败的回调
+  }
+
+  openCamera(){
+    XmPlugin.method03("我要打开相机",
+      function(msg) {
+        alert(msg );
+        this.profilePicture=msg;
+        //this.profilePicture = "assets/image/video.png";
+      },//成功的回调
+
+      function(msg) {
+        alert("失败了"+msg);
+      });//失败的回调
+
   }
 
 

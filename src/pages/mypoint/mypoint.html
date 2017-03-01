@@ -31,7 +31,7 @@
 
 
   <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="segmentModel">
+    <ion-segment [(ngModel)]="segmentModel" (ionChange)="tabChanged()">
       <ion-segment-button value="segmentOne">
         积分记录
       </ion-segment-button>

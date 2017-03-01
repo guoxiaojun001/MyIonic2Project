@@ -16,8 +16,24 @@
 <ion-content padding>
 
 
-  <button ion-button (click)="openCamera()">测试插件</button>
+  <button ion-button (click)="testPlugin()">测试插件</button>
+
+  <button ion-button (click)="openCamera()">打开相机</button>
 
   <button ion-button (click)="sendMsg()">测试广播</button>
+
+
+  <ion-avatar style="text-align: center; " >
+    <img [src]="profilePicture"
+         style="margin: 5px auto;border-radius: 5% ;max-width: 70%; max-height: 30%" />
+  </ion-avatar>
+
+
+  <!--<ion-avatar style="text-align: center; " >-->
+    <!--<img src="/storage/emulated/0/aaaa/1488340266184.jpg"-->
+         <!--style="margin: 5px auto;border-radius: 5% ;max-width: 70%; max-height: 30%" />-->
+  <!--</ion-avatar>-->
+
+
 
 </ion-content>

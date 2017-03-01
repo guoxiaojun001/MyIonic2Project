@@ -51,37 +51,38 @@ export class LoginPage {
     })
 
 
-    // this.userInfoService.login(user).then(data => {
-    //
-    //   var responseData = JSON.stringify(data);
-    //   alert(responseData);
-    //
-    //   if(data.code == "success"){
-    //     alert("//登录成功");
-    //
-    //   }
-    //
-    //   // if (data.Result.ID > 0)//登录成功
-    //   // {
-    //   //   this.storageService.write('UserInfo', data.Result);
-    //   //   //测试写缓存
-    //   //   let ss = this.storageService.read<UserInfoData>('UserInfo');
-    //   //   console.log(ss.UserToken);
-    //   //   alert(ss.UserToken);
-    //   //   //传参
-    //   //   this.navCtrl.push(MyinfoPage, { item: data.Result.ID });
-    //   // }
-    //   // else {
-    //   //   let toast = this.toastCtrl.create({
-    //   //     message: '用户名或密码错误.',
-    //   //     duration: 3000,
-    //   //     position: 'middle',
-    //   //     showCloseButton: true,
-    //   //     closeButtonText: '关闭'
-    //   //   });
-    //   //   toast.present();
-    //   // }
-    // });
+
+    this.userInfoService.login(user).then(data => {
+
+      var responseData = JSON.stringify(data);
+      alert(responseData);
+
+      if(data.code == "success"){
+        alert("//登录成功");
+
+      }
+
+      // if (data.Result.ID > 0)//登录成功
+      // {
+      //   this.storageService.write('UserInfo', data.Result);
+      //   //测试写缓存
+      //   let ss = this.storageService.read<UserInfoData>('UserInfo');
+      //   console.log(ss.UserToken);
+      //   alert(ss.UserToken);
+      //   //传参
+      //   this.navCtrl.push(MyinfoPage, { item: data.Result.ID });
+      // }
+      // else {
+      //   let toast = this.toastCtrl.create({
+      //     message: '用户名或密码错误.',
+      //     duration: 3000,
+      //     position: 'middle',
+      //     showCloseButton: true,
+      //     closeButtonText: '关闭'
+      //   });
+      //   toast.present();
+      // }
+    });
   }
 
 

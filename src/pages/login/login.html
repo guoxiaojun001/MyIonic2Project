@@ -13,13 +13,18 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div class="list list-inset">
+<ion-content >
+
+  <div class="logo">
+    <img src="assets/image/circle_bg.png" alt="Ionic logo">
+  </div>
+
+  <div class="list list-inset" style="align-items: center">
     <label class="item item-input">
-      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="姓名">
     </label>
     <label class="item item-input">
-      <input type="text" placeholder="Last Name">
+      <input type="text" placeholder="密码">
     </label>
   </div>
 
@@ -38,20 +43,14 @@
       <ion-thumbnail item-right> <img src="assets/image/video.png" alt="头像"></ion-thumbnail>
 
 		</ion-item>
-		<button ion-button full (click)="login(loginForm.value, $event)" >登录</button>
-		<button ion-button full (click)="goRegisterPage($event)">注册</button>
+		<button ion-button  (click)="login(loginForm.value, $event)" >登录</button>
+		<button ion-button  (click)="goRegisterPage($event)">注册</button>
 
     <button ion-button full type="submit" class="btn btn-default">测试表单</button>
+
+
+
 	</form>
 
 
-  <div class="bar bar-header item-input-inset" align="center">
-    <label class="item-input-wrapper">
-      <i class="icon ion-ios-search placeholder-icon"></i>
-      <input type="search" placeholder="Search">
-    </label>
-    <button class="button button-clear" >
-      Cancel
-    </button>
-  </div>
 </ion-content>

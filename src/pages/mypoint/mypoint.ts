@@ -88,4 +88,10 @@ export class MypointPage {
     }
   }
 
+
+  tabChanged() {
+    // Close any open sliding items when the schedule updates
+    alert("切换tab");
+  }
+
 }
