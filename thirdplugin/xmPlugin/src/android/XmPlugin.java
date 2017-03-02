@@ -133,6 +133,18 @@ public class XmPlugin extends CordovaPlugin {
     mOutPutFileUri = Uri.fromFile(file);
     intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
 
+   // intent.putExtra("crop", "true");
+
+    //// aspectX aspectY 是宽高的比例
+   // intent.putExtra("aspectX", 1);
+   // intent.putExtra("aspectY", 1);
+
+    //// outputX,outputY 是剪裁图片的宽高
+    //intent.putExtra("outputX", 300);
+    //intent.putExtra("outputY", 300);
+    //intent.putExtra("return-data", true);
+    //intent.putExtra("noFaceDetection", true);
+
     this.cordova.startActivityForResult(XmPlugin.this,intent,200);
   }
 
@@ -152,10 +164,13 @@ public class XmPlugin extends CordovaPlugin {
 
 
       if(requestCode == 200){
-        Toast.makeText(this.cordova.getActivity(),"相机 == ",Toast.LENGTH_SHORT).show();
+
+//        callbackContext.success(mOutPutFileUri + "" );
+
         Log.d("TTTT","11111111");
         try {
           Bitmap photo =  getBitmapFormUri(this.cordova.getActivity(),mOutPutFileUri);
+          Toast.makeText(this.cordova.getActivity(),"相机 == ",Toast.LENGTH_SHORT).show();
           Log.d("TTTT","2222222222");
           callbackContext.success(/*file.getAbsolutePath()*/imgToBase64(photo) );
           Log.d("TTTT","33333");

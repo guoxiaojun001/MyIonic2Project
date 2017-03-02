@@ -73,7 +73,7 @@ export class TestPluginPage {
         // alert("999" + msg );
         // this.profilePicture="file:////storage/emulated/0/aaaa/start_app.png";
         that.profilePicture=msg;
-        this.cd.detectChanges();
+        that.cd.detectChanges();
       },//成功的回调
 
       function(msg) {
