@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { Broadcaster } from 'ionic-native';
 import {Observable} from "rxjs/Observable";
-
+import { ChangeDetectorRef } from '@angular/core';
 
 /*
   Generated class for the TestPlugin page.
@@ -14,7 +14,7 @@ import {Observable} from "rxjs/Observable";
 
 
 declare let XmPlugin: any;
-
+declare let cordova: any;
 
 
 @Component({
@@ -23,9 +23,11 @@ declare let XmPlugin: any;
 })
 export class TestPluginPage {
 
-  profilePicture: any /*= "assets/image/qrcode.jpg"*/;
+  profilePicture: any = "assets/image/qrcode.jpg";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public cd: ChangeDetectorRef) {
     this.registerBroadcast();
 
     // let broadcaster:any;
@@ -65,19 +67,41 @@ export class TestPluginPage {
   }
 
   openCamera(){
+    let that=this;
     XmPlugin.method03("我要打开相机",
       function(msg) {
-        alert(msg );
-        this.profilePicture=msg;
-        //this.profilePicture = "assets/image/video.png";
+        // alert("999" + msg );
+        // this.profilePicture="file:////storage/emulated/0/aaaa/start_app.png";
+        that.profilePicture=msg;
+        this.cd.detectChanges();
       },//成功的回调
 
       function(msg) {
         alert("失败了"+msg);
-      });//失败的回调
+      })/*.then((imageData) => {
+
+      alert("成功");
+      this.profilePicture="file:////storage/emulated/0/aaaa/start_app.png";
+      alert(base64Image);
+    }, (err) => {
+      alert("失败");
+    })*/;//失败的回调
+
 
   }
 
+
+  openTmd(){
+    cordova.plugins.tmdPlugin.coolMethod("tmd 插件",
+      function(msg) {
+        alert(msg );
+      },//成功的回调
+
+      function(msg) {
+        alert("失败了"+msg);
+      });
+
+  }
 
   sendMsg(){
     // Send event to Native

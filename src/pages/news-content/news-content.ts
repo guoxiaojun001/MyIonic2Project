@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, MenuController, ToastController } from 'ionic-angular';
+import { NavController, NavParams, MenuController, ToastController ,FabContainer} from 'ionic-angular';
 import { Data } from '../../providers/data';
 declare var YCQQ, Wechat;
 @Component({

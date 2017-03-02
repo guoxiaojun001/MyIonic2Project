@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="zhihu-content" [innerHtml]="content.body"></div>
-    <ion-fab right bottom>
+    <ion-fab right bottom #fab>
         <button ion-fab color="primary" mini><ion-icon name="ios-send"></ion-icon></button>
         <ion-fab-list side="top">
             <button ion-fab (click)="shareContent('friends',content)"><i color="primary" class="iconfont icon-friends"></i></button>

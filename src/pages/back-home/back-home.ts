@@ -26,7 +26,7 @@ export class BackHomePage {
     //this.navCtrl.pop();
 
     //回到首页，把中间的页面都去除
-    this.navCtrl.push(NewsPage).then(() => {
+    this.navCtrl.push(NewsPage, {tmd:'小牛在线'}).then(() => {
       const index = this.navCtrl.getActive().index;
       this.navCtrl.remove(0, index);
     })

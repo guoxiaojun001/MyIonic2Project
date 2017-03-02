@@ -75,6 +75,7 @@ let options = {
 
 
 @Component({
+  selector: 'page-basic',
   templateUrl: 'basic.html'
 })
 export class BasicPage {
@@ -186,8 +187,6 @@ export class BasicPage {
 
 
 
-
-
   takePhoto() {
     var options = {
       // Some common settings are 20, 50, and 100
@@ -239,6 +238,7 @@ export class BasicPage {
       let base64Image =  imageData;
       this.path = base64Image;
       this.profilePicture=base64Image;
+
       alert(base64Image);
     }, (err) => {
       // Handle error

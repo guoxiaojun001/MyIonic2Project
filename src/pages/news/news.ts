@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
 import { NewsContentPage } from '../news-content/news-content'
 import { Data } from '../../providers/data';
 
@@ -12,8 +12,13 @@ export class NewsPage {
   date: Date = new Date();
   dataFinish: boolean = false;
   hasErr: boolean = false;
-  constructor(public navCtrl: NavController, public data: Data) {
 
+  tmd : any;
+
+  constructor(public navCtrl: NavController, public data: Data,public navParams: NavParams) {
+
+      this.tmd=navParams.get("tmd");
+    alert("qqq = " + this.tmd)
   }
   ionViewDidLoad() {
     setTimeout(() => {
