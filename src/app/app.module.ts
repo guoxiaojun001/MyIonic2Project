@@ -78,11 +78,16 @@ import {ConferenceData} from "../providers/conference-data";
   imports: [
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages: true,
-      platforms: {
-        ios: {
-          backButtonText: "返回"
-        }
-      }
+      backButtonText: "",
+      mode:'ios',
+      // platforms: {
+      //   ios: {
+      //     backButtonText: ""
+      //   },
+      //   md:{
+      //     backButtonText: ""
+      //   }
+      // }
     })
   ],
   bootstrap: [IonicApp],

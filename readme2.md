@@ -36,6 +36,11 @@ js文件只能在外部修改，然后重新把插件添加进来（暂时没有
 然后在手机上测试
 
 
+
+图片返回base64
+let base64Image = "data:image/jpeg;base64," + imageData;
+
+
 6.插件修改后需要重现删除后，在添加，然后编译再运行
 
 

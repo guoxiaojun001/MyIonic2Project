@@ -52,7 +52,9 @@ export class Data {
   }
   getInTheaters(start, count) {
     return new Promise((resolve, reject) => {
-      this.http.get('https://api.douban.com/v2/movie/in_theaters?start=' + start + '&count=' + count).subscribe(res => {
+      this.http.get(
+        'https://api.douban.com/v2/movie/in_theaters?start=' + start + '&count=' + count)
+        .subscribe(res => {
         this.topData = res.json().subjects;
         resolve(this.topData);
       }, err => {

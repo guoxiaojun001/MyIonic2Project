@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 
 import { NavController, ToastController } from 'ionic-angular';
 declare var navigator;
+
+
+declare var helloworld:any;
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -27,5 +31,12 @@ export class AboutPage {
       duration: 2000
     });
     toast.present();
+  }
+
+
+
+
+  test(parm){
+    helloworld(parm);
   }
 }
