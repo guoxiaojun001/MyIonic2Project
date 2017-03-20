@@ -43,6 +43,7 @@ import { Storage } from '@ionic/storage';
 import {MycustomerPage} from "../pages/mycustomer/mycustomer";
 import {UserData} from "../providers/user-data";
 import {ConferenceData} from "../providers/conference-data";
+import {LayoutPage} from "../pages/layout/layout";
 
 
 
@@ -73,6 +74,7 @@ import {ConferenceData} from "../providers/conference-data";
     MycustomerPage,
     TestPluginPage,
     TutorialPage,
+    LayoutPage,
     ProductdetailPage
   ],
   imports: [
@@ -115,6 +117,7 @@ import {ConferenceData} from "../providers/conference-data";
     MycustomerPage,
     TestPluginPage,
     TutorialPage,
+    LayoutPage,
     ProductdetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },

@@ -13,6 +13,7 @@ import {MyloanPage} from "../pages/myloan/myloan";
 import {MycustomerPage} from "../pages/mycustomer/mycustomer";
 import {TestPluginPage} from "../pages/test-plugin/test-plugin";
 import { Storage } from '@ionic/storage';
+import {LayoutPage} from "../pages/layout/layout";
 
 
 
@@ -62,6 +63,8 @@ export class MyApp {
       { title: '我的积分', icon: 'md-analytics', component: MypointPage },
       { title: '我的借款', icon: 'md-analytics', component: MyloanPage },
       { title: '我的客户', icon: 'md-analytics', component: MycustomerPage },
+      { title: '布局测试', icon: 'md-analytics', component: LayoutPage },
+
       { title: '插件测试', icon: 'md-analytics', component: TestPluginPage }
 
     ];

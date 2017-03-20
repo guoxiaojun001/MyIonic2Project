@@ -20,6 +20,7 @@ import {ProductdetailPage} from "../productdetail/productdetail";
 export class ProductPage {
 
   URL = "https://baike.baidu.com/api/openapi/BaikeLemmaCardApi?scope=103&format=json&appid=379020&bk_key=%E9%93%B6%E9%AD%82&bk_length=60";
+  // URL= "http://10.2.11.227:8080/HNUST/student/messageList";
   homeList: any;
   dataFinish: boolean = false;
   date: Date = new Date();

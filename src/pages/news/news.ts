@@ -18,7 +18,6 @@ export class NewsPage {
   constructor(public navCtrl: NavController, public data: Data,public navParams: NavParams) {
 
       this.tmd=navParams.get("tmd");
-    alert("qqq = " + this.tmd)
   }
   ionViewDidLoad() {
     setTimeout(() => {
