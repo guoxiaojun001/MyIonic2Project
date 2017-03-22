@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {NewsPage} from "../news/news";
+import {Device} from "ionic-native/dist/es5/index";
+// import { Device } from 'ionic-native';
 
 /*
   Generated class for the BackHome page.
@@ -14,10 +16,10 @@ import {NewsPage} from "../news/news";
 })
 export class BackHomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BackHomePage');
+    console.log('ionViewDidLoad BackHomePage' + Device.uuid);
   }
 
 

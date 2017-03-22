@@ -28,6 +28,8 @@ import { MyloanPage } from '../pages/myloan/myloan';
 import { TestPluginPage } from '../pages/test-plugin/test-plugin';
 import {ProductdetailPage} from "../pages/productdetail/productdetail";
 import { TutorialPage } from '../pages/tutorial/tutorial';
+
+import {ProgressBarComponent} from "../components/progress-bar/progress-bar";//自定义组件需要在此添加
 //页面要加这里
 
 
@@ -44,6 +46,8 @@ import {MycustomerPage} from "../pages/mycustomer/mycustomer";
 import {UserData} from "../providers/user-data";
 import {ConferenceData} from "../providers/conference-data";
 import {LayoutPage} from "../pages/layout/layout";
+import {TapRevealComponent} from "../components/tap-reveal/tap-reveal";
+
 
 
 
@@ -75,6 +79,8 @@ import {LayoutPage} from "../pages/layout/layout";
     TestPluginPage,
     TutorialPage,
     LayoutPage,
+    ProgressBarComponent,
+    TapRevealComponent,
     ProductdetailPage
   ],
   imports: [
@@ -118,6 +124,8 @@ import {LayoutPage} from "../pages/layout/layout";
     TestPluginPage,
     TutorialPage,
     LayoutPage,
+    ProgressBarComponent,
+    TapRevealComponent,
     ProductdetailPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },

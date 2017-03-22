@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ActionSheetController,Platform} from 'ionic-angular';
+import {NavController, NavParams, ActionSheetController, Platform, ToastController} from 'ionic-angular';
+import {Observable} from "rxjs/Observable";
+import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/filter';
 
 /*
   Generated class for the Mypoint page.
@@ -17,18 +20,37 @@ export class MypointPage {
   segmentsArray = ['segmentOne','segmentTwo'];
   segmentModel: string = this.segmentsArray[0];
 
+  loadProgress: number = 50;
+
+  toast: any;
   isFetching: boolean
   isMore: boolean
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public actionSheetCtrl: ActionSheetController,
+              public toastCtrl: ToastController,
               public platform: Platform) {
     this.isAndroid = platform.is('android');
+
+    this.toast = this.toastCtrl.create({
+      message: "Mission Completed.",
+      dismissOnPageChange: true,
+      duration: 2000
+    })
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MypointPage');
+  ionViewDidLoad(): void {
+    let subscription = Observable.interval(100)
+      .subscribe(value => {
+        if (value <= 60) {
+          this.loadProgress = value;
+        }
+        else {
+          subscription.unsubscribe();
+          this.toast.present();
+        }
+      });
   }
 
 

@@ -14,6 +14,7 @@ import { ListPage } from '../../list/list';
 import { BackHomePage } from '../../back-home/back-home';
 
 
+
 let options = {
   // statusbar: {
   //   color: '#ffffffff'
