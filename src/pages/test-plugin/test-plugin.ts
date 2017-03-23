@@ -6,11 +6,11 @@ import {Observable} from "rxjs/Observable";
 import { ChangeDetectorRef } from '@angular/core';
 
 /*
-  Generated class for the TestPlugin page.
+ Generated class for the TestPlugin page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+ See http://ionicframework.com/docs/v2/components/#navigation for more info on
+ Ionic pages and navigation.
+ */
 
 
 declare let XmPlugin: any;
@@ -28,18 +28,17 @@ export class TestPluginPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public cd: ChangeDetectorRef) {
-    this.registerBroadcast();
 
-    // let broadcaster:any;
-    // Broadcaster.addEventListener( "test.java", function( e ) {
-    //   alert("ionic2通知1111111111 + " + e);
-    // }).then((event)=>alert("ionic2通知222222222 + " + event));
+
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TestPluginPage');
     // Listen to events from Native
+
+    Broadcaster.addEventListener("test.java").subscribe(
+      val => {alert("22 =" + val.userdata)});
 
   }
 
@@ -80,12 +79,12 @@ export class TestPluginPage {
         alert("失败了"+msg);
       })/*.then((imageData) => {
 
-      alert("成功");
-      this.profilePicture="file:////storage/emulated/0/aaaa/start_app.png";
-      alert(base64Image);
-    }, (err) => {
-      alert("失败");
-    })*/;//失败的回调
+     alert("成功");
+     this.profilePicture="file:////storage/emulated/0/aaaa/start_app.png";
+     alert(base64Image);
+     }, (err) => {
+     alert("失败");
+     })*/;//失败的回调
 
 
   }
@@ -104,9 +103,16 @@ export class TestPluginPage {
   }
 
   sendMsg(){
+
+    // Broadcaster.addEventListener('testjava').subscribe(
+    //   res=> {
+    //     alert("11 ="+res.back);
+    //       });
+
+
     // Send event to Native
-     Broadcaster.fireNativeEvent('test.xmqq',
-       {userdata:'ionic 发送的测试数据77777'}).then(() => console.log('发送success'));
+    Broadcaster.fireNativeEvent('test.xmqq',
+      {userdata:'ionic 发送的测试数据77777'}).then(() => console.log('发送success'));
 
     // Broadcaster.fireNativeEvent( "test.xmqq", { userdata:'我是测试数据' }, function() {
     //   console.log( "event fired! 成功" );

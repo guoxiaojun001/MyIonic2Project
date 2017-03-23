@@ -8,17 +8,16 @@ declare var BMap, BDLocation;
 })
 export class BaiduMapPage {
   map: any;
-
-
   constructor(public navCtrl: NavController, public menuCtrl: MenuController, public toastCtrl: ToastController) {
     this.menuCtrl.swipeEnable(false);
-
   }
   getLocation() {
     let that = this;
+    that.showToast('定位开始！');
     BDLocation.watch({ gps: true },
       (suc) => {
         if (suc.data) {
+          that.showToast('定位成功！');
           this.map.centerAndZoom(new BMap.Point(suc.data.longitude, suc.data.latitude), 15);
           let pt = new BMap.Point(suc.data.longitude, suc.data.latitude);
           let marker2 = new BMap.Marker(pt);

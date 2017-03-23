@@ -34,6 +34,7 @@ export class NewsPage {
       this.hasErr = true;
     })
   }
+  
   getMoreZhihuList(event) {
     let year = this.date.getFullYear();
     let month = (this.date.getMonth() + 1).toString();

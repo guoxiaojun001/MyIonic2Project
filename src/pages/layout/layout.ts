@@ -14,7 +14,11 @@ import {ViewController} from 'ionic-angular';
 })
 export class LayoutPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
+  }
 
 
   // 页面被加载完成后调用的函数，切换页面时并不会进行重新加载，因为有cache的存在

@@ -21,6 +21,7 @@ export class MypointPage {
   segmentModel: string = this.segmentsArray[0];
 
   loadProgress: number = 50;
+  items = ['菜鸟教程', 'Google', 'Taobao', 'Facebook'];
 
   toast: any;
   isFetching: boolean
