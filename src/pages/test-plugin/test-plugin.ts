@@ -38,7 +38,7 @@ export class TestPluginPage {
     // Listen to events from Native
 
     Broadcaster.addEventListener("test.java").subscribe(
-      val => {alert("22 =" + val.userdata)});
+      val => {alert("22返回 =" + val.userdata)});
 
   }
 

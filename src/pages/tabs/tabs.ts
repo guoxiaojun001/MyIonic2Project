@@ -4,6 +4,7 @@ import { NewsPage } from '../news/news';
 import { MoviePage } from '../movie/movie';
 import { AboutPage } from '../about/about';
 import {ProductPage} from "../product/product";
+import {HomePage} from "../home/home";
 
 
 @Component({
@@ -18,6 +19,7 @@ export class TabsPage {
   tab2Root: any = MoviePage;
   tab3Root: any = AboutPage;
   tab4Root: any = ProductPage;
+  homeRoot: any = HomePage;
 
   constructor() {
 

@@ -20,6 +20,7 @@ import {LayoutPage} from "../pages/layout/layout";
 declare let MyPlugin: any;
 
 declare let DiyiPlugin: any;
+declare var AppMinimize;
 
 
 @Component({
@@ -84,7 +85,8 @@ export class MyApp {
         if (!(page instanceof TabsPage)) {
           if (!this.nav.canGoBack()) {
             //当前页面为tabs，退出APP
-            return this.showExit();
+            return  AppMinimize.minimize();
+            // return this.showExit();
           }
           //当前页面为tabs的子页面，正常返回
           return this.nav.pop();
@@ -95,7 +97,9 @@ export class MyApp {
 
         if (!activeNav.canGoBack()) {
           //当前页面为tab栏，退出APP
-          return this.showExit();
+          return   AppMinimize.minimize();
+          // return activeNav.canGoBack() ? activeNav.pop() : AppMinimize.minimize();
+          // return this.showExit();
         }
         //当前页面为tab栏的子页面，正常返回
         return activeNav.pop();
@@ -106,7 +110,7 @@ export class MyApp {
     if (this.backButtonPressed) this.platform.exitApp();
     else {
       let toast = this.toastCtrl.create({
-        message: '再按一次退出应用',
+        message: '再按一次退出应用9999',
         duration: 2000,
         position: 'bottom'
       });

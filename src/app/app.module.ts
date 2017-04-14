@@ -47,6 +47,10 @@ import {UserData} from "../providers/user-data";
 import {ConferenceData} from "../providers/conference-data";
 import {LayoutPage} from "../pages/layout/layout";
 import {TapRevealComponent} from "../components/tap-reveal/tap-reveal";
+import {NavigationModalPage} from "../pages/home/navigation-modal/navigation-modal";
+import {LocationSearchModalPage} from "../pages/home/location-search-modal/location-search-modal";
+import {NativeService} from "../providers/NativeService";
+import {HomePage} from "../pages/home/home";
 
 
 
@@ -81,7 +85,8 @@ import {TapRevealComponent} from "../components/tap-reveal/tap-reveal";
     LayoutPage,
     ProgressBarComponent,
     TapRevealComponent,
-    ProductdetailPage
+    ProductdetailPage,
+    HomePage, LocationSearchModalPage, NavigationModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{
@@ -126,9 +131,10 @@ import {TapRevealComponent} from "../components/tap-reveal/tap-reveal";
     LayoutPage,
     ProgressBarComponent,
     TapRevealComponent,
-    ProductdetailPage
+    ProductdetailPage,
+    HomePage, LocationSearchModalPage, NavigationModalPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
-    Data,HttpService,StorageService ,Storage ,UserData,ConferenceData]
+    Data,HttpService,StorageService ,Storage ,UserData,ConferenceData,NativeService]
 })
 export class AppModule { }

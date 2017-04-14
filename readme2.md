@@ -70,3 +70,7 @@ let base64Image = "data:image/jpeg;base64," + imageData;
 
 
 8. 在项目中展示html网页，$ ionic plugin add cordova-plugin-themeablebrowser 插件
+
+
+可以执行以下命令来更新版本。
+npm update-g cordova ionic

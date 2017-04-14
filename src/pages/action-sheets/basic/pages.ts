@@ -119,7 +119,6 @@ export class BasicPage {
     this.showToast('param2 = ' + this.param2);
 
 
-
     this.loginForm = formBuilder.group({
       /**
        * 表单的操作，方括号里面的参数是对输入的要求
@@ -179,12 +178,12 @@ export class BasicPage {
   }
 
   showToast(msg) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 2000
-    });
-    toast.present();
-  }
+  let toast = this.toastCtrl.create({
+    message: msg,
+    duration: 2000
+  });
+  toast.present();
+}
 
 
 
